@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')), #for allauth
     path('dashboard/', include('dashboard.urls')),
+    path('sec/api/v1/', include('restapi.urls')),
 ]

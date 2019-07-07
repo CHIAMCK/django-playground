@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'dashboard',
     'webpack_loader',
     'compressor',
-
+    'rest_framework',
 ]
 
 WEBPACK_LOADER = {
@@ -221,3 +221,12 @@ ACCOUNT_FORMS = {
     'login': 'accounts.forms.OverrideLoginForm',
 
 }  # for allauth
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
