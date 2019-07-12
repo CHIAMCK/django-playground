@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'webpack_loader',
     'compressor',
     'rest_framework',
+    'taskmanagement',
 ]
 
 WEBPACK_LOADER = {
@@ -72,7 +73,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'sec.urls'
 
-CRISPY_TEMPLATE_PACK =  'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # custom template and project path
 SETTINGS_DIR = os.path.dirname(__file__)
