@@ -1,8 +1,10 @@
 from rest_framework.generics import CreateAPIView
-from ..serializers import TaskSerializer
-from taskmanagement.models import Task
 from rest_framework.permissions import IsAuthenticated
+
 from restapi.v1.mixin import CsrfExemptSessionAuthentication
+from taskmanagement.models import Task
+
+from ..serializers import TaskSerializer
 
 
 class TaskAddView(CreateAPIView):
