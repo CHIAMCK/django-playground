@@ -25,6 +25,7 @@ class Task(models.Model):
     updated_by = models.ForeignKey(
         to='auth.User',
         null=True,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+'
     )
@@ -32,6 +33,7 @@ class Task(models.Model):
     deleted_by = models.ForeignKey(
         to='auth.User',
         null=True,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+'
     )
