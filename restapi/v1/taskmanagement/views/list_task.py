@@ -11,8 +11,8 @@ class TaskListView(ListAPIView):
 
     # override get queryset method to return tasks that are assigned to the user
     def get_queryset(self):
-        user = self.request.user
+        board_id = self.kwargs['pk']
         qs = Task.objects.filter(
-            assigned_to=user.id
+            board=board_id
         )
         return qs

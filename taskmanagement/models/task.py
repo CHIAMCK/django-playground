@@ -15,6 +15,13 @@ class Task(models.Model):
         related_name='assigned_to_tasks'
     )
 
+    board = models.ForeignKey(
+        to='board.Board',
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='board_tasks'
+    )
+
     created_by = models.ForeignKey(
         to='auth.User',
         null=True,

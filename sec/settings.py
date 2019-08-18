@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'taskmanagement',
     'debug_toolbar',
     'store',
+    'board'
 ]
 
 DEBUG_TOOLBAR_PANELS = [
