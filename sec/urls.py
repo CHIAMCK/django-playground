@@ -19,8 +19,10 @@ from django.conf.urls import url, include
 import dashboard.views
 
 urlpatterns = [
+    path('', dashboard.views.MainDashboardView.as_view(), name='home'),  # can change to anything
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')), #for allauth
     path('dashboard/', include('dashboard.urls')),
     path('sec/api/v1/', include('restapi.urls')),
+    path('task/', include('taskmanagement.urls')),
 ]

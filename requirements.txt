@@ -1,7 +1,8 @@
 django-allauth==0.37.0
-django-extensions==2.1.2
-Werkzeug
 django-crispy-forms==1.7.2
-django-webpack-loader
 django-compressor==2.2
+django-extensions==2.1.2
+django-webpack-loader
+Django==2.1.5
+Werkzeug
 

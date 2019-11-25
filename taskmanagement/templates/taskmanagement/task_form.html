@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% load render_bundle from webpack_loader %}
+
+{% block main_content %}
+    <div class="sh-container-fluid">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-sm-3 d-xs-none"></div>
+                <div class="col-sm-6">
+                    <div class="col text-left">
+                        <div class="card">
+                            <div class="card-body">
+                                {% crispy form %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 d-xs-none"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
