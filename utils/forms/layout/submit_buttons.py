@@ -4,7 +4,6 @@ from crispy_forms.layout import ButtonHolder, Submit, Button
 # <div class=”buttonHolder”>
 #   <input type="submit" name="save" value="Save" class="btn white btn-success" />
 #   <input type="submit" name="save_add" value="Save and add" class="btn white" />
-#   <input type="submit" name="save_edit" value="Save and edit" class="btn white" />
 #   <input type="submit" name="submit_cancel" value="Cancel" class="btn white btn-link" />
 # </div>
 
@@ -29,7 +28,6 @@ class SubmitButtons(ButtonHolder):
 # <div class=”buttonHolder”>
 #   <input type="submit" name="save" value="Save" class="btn white btn-success" />
 #   <input type="submit" name="save_add" value="Save and add" class="btn white" />
-#   <input type="submit" name="save_edit" value="Save and edit" class="btn white" />
 #   <input type="submit" name="submit_cancel" value="Cancel" class="btn white btn-link" />
 # </div>
 
@@ -46,7 +44,7 @@ class CreateSubmitButtons(SubmitButtons):
 
         buttons = [
             ('save', 'Save'), ('save_add', 'Save and add'),
-            ('save_edit', 'Save and edit'), ('submit_cancel', 'Cancel')
+            ('submit_cancel', 'Cancel')
         ]
 
         super().__init__(*buttons, css_class=css_class, button_css_classes=button_css_classes)

@@ -1,0 +1,15 @@
+
+{% if messages %}
+<div class="row">
+    <div class="col col-xs-12">
+        {% for message in messages %}
+        <!-- boostrap alert -->
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible">{{ message }}
+            <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">x</span>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
