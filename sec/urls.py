@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('dashboard.urls')),
     path('sec/api/v1/', include('restapi.urls')),
     path('task/', include('taskmanagement.urls')),
+    path('store/', include('store.urls')),
 ]

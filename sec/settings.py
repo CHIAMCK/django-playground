@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'compressor',
     'rest_framework',
     'taskmanagement',
+    'store',
 ]
 
 WEBPACK_LOADER = {
@@ -231,4 +232,15 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     )
+}
+
+# cache
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f'redis://{os.environ.get("REDIS_HOST")}:6379',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
 }
