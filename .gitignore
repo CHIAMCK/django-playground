@@ -20,3 +20,7 @@ webpack-stats.json
 
 # Django stuff(Logs):
 *.log
+
+# virtualenv
+.venv
+.python-version

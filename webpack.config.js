@@ -108,5 +108,4 @@ module.exports = {
       static: path.resolve(__dirname, 'static')
     }
   }
-
 };
