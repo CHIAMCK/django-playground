@@ -5,6 +5,16 @@
 
 {% block main_content %}
 <div class="card">
+    <div class="card-header">
+        <div class="row align-items-center d-sm-down-none">
+            <div class="col-1">
+            </div>
+            <div class="col-1">
+                <!-- pass additional context to the template using keyword argument -->
+                {% include 'lists/add_button.html' with reverse_url='tasks:add' title='Create a new task' %}
+            </div>
+        </div>
+    </div>
     <div class="card-body">
         <div id='react'></div>
         {% render_bundle 'task_list' %}
