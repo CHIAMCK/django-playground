@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'store',
     'board'
+    'django_filters',
 ]
 
 DEBUG_TOOLBAR_PANELS = [
