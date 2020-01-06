@@ -8,8 +8,12 @@ from rest_framework.views import APIView
 from ..mixin import CsrfExemptSessionAuthentication
 
 
+# subclasses Django's View class
+# using REST framework's Request, Response instance
 class LoginView(APIView):
+    # set the authentication scheme on a per-view basis
     authentication_classes = []
+    # set the authorization policy on a per-view basis
     permission_classes = []
 
     @csrf_exempt
@@ -17,6 +21,7 @@ class LoginView(APIView):
         return self.login_user(request)
 
     def login_user(self, request):
+        # get the data from request instance
         username = request.data.get('username')
         password = request.data.get('password')
         user = authenticate(username=username, password=password)
@@ -24,7 +29,7 @@ class LoginView(APIView):
             if user.is_active:
                 login(request, user)
                 return Response(status=HTTP_200_OK)
-        return Response(status=HTTP_404_NOT_FOUND)       
+        return Response(status=HTTP_404_NOT_FOUND)
 
 
 class LogoutView(APIView):
@@ -36,4 +41,4 @@ class LogoutView(APIView):
 
     def logout_user(self, request):
         logout(request)
-        return Response(status=HTTP_200_OK)    
+        return Response(status=HTTP_200_OK)

@@ -22,7 +22,8 @@ module.exports = {
   mode: devMode ? 'development' : 'production',
   entry: {
     main_css: './static/js/css',
-    libs: './static/js/main'
+    libs: './static/js/main',
+    task_list: './taskmanagement/static/js/task_list'
   },
   optimization: {
     runtimeChunk: "single",
@@ -63,7 +64,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       },
@@ -103,7 +104,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.scss', '.vue'],
+    extensions: ['*', '.js', '.scss', '.vue', '.jsx'],
     alias: {
       static: path.resolve(__dirname, 'static')
     }

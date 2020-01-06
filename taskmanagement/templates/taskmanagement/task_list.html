@@ -1,10 +1,13 @@
 {% extends "master.html" %}
 {% load render_table from django_tables2 %}
+{% load render_bundle from webpack_loader %}
+
 
 {% block main_content %}
 <div class="card">
     <div class="card-body">
-        {% render_table table %}
+        <div id='react'></div>
+        {% render_bundle 'task_list' %}
     </div>
 </div>
 {% endblock %}
