@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 import dashboard.views
+import debug_toolbar
 
 urlpatterns = [
     path('', dashboard.views.MainDashboardView.as_view(), name='home'),  # can change to anything
@@ -26,4 +27,5 @@ urlpatterns = [
     path('sec/api/v1/', include('restapi.urls')),
     path('task/', include('taskmanagement.urls')),
     path('store/', include('store.urls')),
+    url(r'^__debug__/', include(debug_toolbar.urls)),
 ]
