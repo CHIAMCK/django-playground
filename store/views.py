@@ -24,5 +24,4 @@ def view_books(request):
         results = [product.to_json() for product in products]
         print(results)
         cache.set('product', results, timeout=CACHE_TTL)
-        cache.get('product')
         return Response(results, status=status.HTTP_201_CREATED)
