@@ -32,6 +32,21 @@ services:
   redis:
     image: redis:5.0
 
+  celery:
+    build:
+      context: ..
+      dockerfile: './docker/Dockerfile-web'
+    volumes:
+      - '..:/code'
+    restart: on-failure
+    environment:
+      - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}
+      - STATIC_ROOT=${STATIC_ROOT}
+      - REDIS_HOST=redis
+    command: celery -A sec worker -l debug
+    depends_on:
+      - redis
+
 volumes:
   db_data:
     driver: 'local'
