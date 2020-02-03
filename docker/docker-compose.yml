@@ -32,6 +32,13 @@ services:
   redis:
     image: redis:5.0
 
+  mailhog:
+    image: 'mailhog/mailhog'
+    expose:
+      - '1025'
+    ports:
+      - '8025:8025'
+
   celery:
     build:
       context: ..

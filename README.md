@@ -21,3 +21,7 @@ the value stored in redis is hashed.
 django-redis reference:
 https://code.tutsplus.com/tutorials/how-to-cache-using-redis-in-django-applications--cms-30178
 https://realpython.com/caching-in-django-with-redis/
+
+# how send email
+1. add email setting
+2. use django email

@@ -1,5 +1,6 @@
 
 from django.db import models
+from taskmanagement.tasks import send_verification_email
 
 
 class Task(models.Model):
@@ -48,3 +49,7 @@ class Task(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
     deleted_date = models.DateTimeField(null=True, blank=True)
+
+    def save(self, commit=True):
+        send_verification_email.delay('123', '321', '123@gmail.com', ['809@gmail.com'], True)
+        return super().save(commit)
