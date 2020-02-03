@@ -1,4 +1,4 @@
-
+from ..models import Task
 
 # class SubmitButtonsMixin:
 
@@ -14,3 +14,16 @@
 #         if 'save_add' in self.request.POST:
 
 #         return reverse(f'{self.prefix}:{suffix}')
+
+
+class RestrictTaskListMixin:
+    def get_queryset(self):
+        user = self.request.user
+        # handle if queryset is not provided
+        try:
+            qs = super().get_queryset()
+        except AttributeError:
+            qs = Task.objects
+
+        qs = qs.filter(assigned_to=user)
+        return qs
