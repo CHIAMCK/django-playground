@@ -240,3 +240,13 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 # https://www.revsys.com/tidbits/celery-and-django-and-docker-oh-my/
+
+# email settings
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'mailhog'
+EMAIL_PORT = '1025'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'email@email.com'
+SERVER_EMAIL = 'email@email.com'
+NO_REPLY_FROM_EMAIL = 'email@email.com'
