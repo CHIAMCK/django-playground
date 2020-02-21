@@ -7,6 +7,7 @@ from restapi.v1.mixin import CsrfExemptSessionAuthentication
 
 class TaskAddView(CreateAPIView):
     # CreateAPIVIEW Used for create-only endpoints.
+    # Provides a post method handler.
     authentication_classes = [CsrfExemptSessionAuthentication]
     permission_classes = [IsAuthenticated]
     queryset = Task.objects.all()
