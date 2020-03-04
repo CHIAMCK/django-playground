@@ -1,13 +1,35 @@
 {% extends "master.html" %}
+<!-- to use the querystring template tag -->
+{% load django_tables2 %}
 {% load render_table from django_tables2 %}
 {% load render_bundle from webpack_loader %}
 
 
 {% block main_content %}
-<div class="card">
+
+<!-- create a table form -->
+<!-- form action can be querystring -->
+<form method="GET" action="{% querystring %}" id="table_form">
+    <div class="card">
+        <div class="card-header">
+            <div class="row align-items-center d-sm-down-none">
+                <div class="col">
+                    {% include 'lists/search_bar.html' with field=filter.form.title placeholder='Search by task name' %}
+                </div>
+                <div class="col-1">
+                    <!-- pass additional context to the template using keyword argument -->
+                    {% include 'lists/add_button.html' with reverse_url='tasks:add' title='Create a new task' %}
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            {% render_table table %}
+        </div>
+    </div>
     <div class="card-body">
         <div id='react'></div>
         {% render_bundle 'task_list' %}
     </div>
 </div>
+</form>
 {% endblock %}
